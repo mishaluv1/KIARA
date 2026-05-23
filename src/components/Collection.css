@@ -1,0 +1,122 @@
+.collection {
+  padding: 6rem 0;
+  background: var(--color-white);
+}
+
+.collection__intro {
+  text-align: center;
+  max-width: 550px;
+  margin: 0 auto 3.5rem;
+  font-size: 0.95rem;
+  color: var(--color-gray);
+  line-height: 1.8;
+}
+
+/* ---- Grid ---- */
+.collection__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ---- Card ---- */
+.collection__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-light);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.collection__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.collection__card-image {
+  position: relative;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.collection__card-overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+.collection__card-tag {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.collection__card-dress {
+  width: 80px;
+  height: auto;
+  opacity: 0.7;
+  transition: opacity var(--transition);
+}
+
+.collection__card:hover .collection__card-dress {
+  opacity: 1;
+}
+
+.collection__card-info {
+  padding: 1.5rem;
+}
+
+.collection__card-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-dark);
+}
+
+.collection__card-desc {
+  font-size: 0.8rem;
+  color: var(--color-gray);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.collection__card-price {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+/* ---- CTA ---- */
+.collection__cta {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 992px) {
+  .collection__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .collection__grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .collection__card-image {
+    height: 280px;
+  }
+}
